@@ -24,17 +24,30 @@
 	</title>
 	<?php
 		echo $this->Html->meta('icon');
-
+		echo $this->Html->script('jquery-1.10.2');
+		echo $this->Html->script('jquery.flexslider');
 		echo $this->Html->css('style');
+		echo $this->Html->css('flexslider');
 		echo $this->fetch('meta');
 		echo $this->fetch('css');
 		echo $this->fetch('script');
 	?>
+	<script type="text/javascript" charset="utf-8">
+		$(window).load(function() {
+		$('.flexslider').flexslider({
+			controlNav: false,               //Boolean: Create navigation for paging control of each clide? Note: Leave true for manualControls usage
+			directionNav: false, 
+		});
+		});
+	</script>
 </head>
 <body>
 	<div id="container">
 		<div id="header">
-			Header
+			<div class = "logo">
+				<?php echo $this->Html->image('logo_quiker.jpg'); ?>
+			</div>
+			<?php echo $this->element('menu'); ?>
 		</div>
 		<div id="content">
 

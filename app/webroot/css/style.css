@@ -2,3 +2,84 @@
 	margin:0;
 	padding:0;
 }
+
+#header{
+	height: 80px;
+	background-color: white;
+	position: fixed;
+	width: 100%;
+	border-bottom: 1px solid #aaaaaa;
+}
+
+.menu{
+	font-family: 'Open Sans', sans-serif;
+	font-size: 12px;
+	font-weight: bold;
+	color: black;
+	float: right;
+	margin-top: 15px;
+	font-weight: 300;
+}
+
+.menu ul li{
+	float: left;
+	list-style: none;
+	text-transform: uppercase;
+}
+
+.menu ul li a{
+	text-decoration: none;
+	display: block;
+	padding: 20px;
+	color: black;
+}
+
+.menu ul li a:hover{
+	color: #e17329;
+}
+
+.direccion{
+	font-family: 'Open Sans', sans-serif;
+	float: right;
+	height: 0px;
+	background-color: #e17329;
+	padding: 20px 50px 60px 50px;
+	color: white;
+	width: 200px;
+	font-size: 12px;
+	margin-right: 7%;
+	text-align: center;
+	margin-left: 30px;
+	font-weight: 300;
+	line-height: 20px;
+}
+
+.logo{
+	margin: 15px 10px 10px 100px;
+	float: left;
+}
+
+.flexslider{
+	position: relative;
+	top: 80px;
+}
+
+#big_content{
+	width: 100%;
+	margin-top: 90px;
+}
+
+#big_content .left{
+	color: white;
+	background-color: #e17329;
+	height: 200px;
+	float: left;
+	width: 50%;
+}
+
+#big_content .left .title{
+	font-size: 18px;
+}
+
+
+

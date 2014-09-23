@@ -45,7 +45,7 @@
 	<div id="container">
 		<div id="header">
 			<div class = "logo">
-				<?php echo $this->Html->image('logo_quiker.jpg'); ?>
+				<?php echo $this->Html->image('logo.png', array('width' => '210px')); ?>
 			</div>
 			<?php echo $this->element('menu'); ?>
 		</div>

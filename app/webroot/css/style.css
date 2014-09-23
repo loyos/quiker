@@ -143,7 +143,7 @@
 	padding: 25px 15px 25px 0px;
 	color: #68717a;
 	font-family: 'Open Sans', sans-serif;
-	min-height: 113px;
+	min-height: 112px;
 }
 
 #services .wrap .service .left p{
@@ -163,10 +163,40 @@
 
 #services .wrap .service .right{
 	float: right;
-	height: 113px;
+	height: 112px;
 }
 
 #footer{
+	border-top: 1px solid #DEDEDE;
+	margin-top: 320px;
 	clear: both;
 	width: 100%;
+	position: relative;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#footer .wrapper{
+	position: relative;
+	margin-left: auto;
+	margin-right: auto;
+	width: 80%;
+}
+
+#footer .left{
+	float: left;
+	color: #68717a;
+	font-family: 'Open Sans', sans-serif;
+	font-size: 12px;
+	padding-top: 40px;
+}
+
+#footer .right{
+	background-color: #e17329;
+	float: right;
+	width: 200px;
+}
+
+#footer .right img{
+	margin: 30px;
 }

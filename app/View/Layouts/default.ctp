@@ -56,9 +56,15 @@
 			<?php echo $this->fetch('content'); ?>
 		</div>
 		<div id="footer">
-			<?php 
-				echo 'Footer';
-			?>
+			<div class = "wrapper">
+				<div class = "left">
+					QUIKERWIRE (C) 2014  |  PRIVACY POLICY
+				</div>
+				<div class = "right">
+					<?php echo $this->Html->image('header-twitter.png', array('width' => '40px')); ?>
+					<?php echo $this->Html->image('header-facebook.png', array('width' => '15px')); ?>
+				</div>
+			</div>
 		</div>
 	</div>
 	<?php echo $this->element('sql_dump'); ?>

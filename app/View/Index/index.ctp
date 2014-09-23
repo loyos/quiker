@@ -34,7 +34,7 @@
 <section id = "services">
 	<div class = "wrap">
 		<div class = "service">
-			<div class = "left">
+			<div class = "left" style = "border-top: 1px solid #DEDEDE;">
 				<div class = "title">
 					Service 1
 				</div>

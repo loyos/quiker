@@ -12,6 +12,12 @@
 	z-index: 10;
 }
 
+#content{
+	padding-top: 80px;
+	padding-bottom: 100px;
+	min-height: 350px;
+}
+
 .menu{
 	font-family: 'Open Sans', sans-serif;
 	font-size: 12px;
@@ -55,6 +61,24 @@
 	line-height: 20px;
 }
 
+.direccion a{
+	margin-top: 30px;
+	text-decoration: none;
+	margin-left: 5px;
+	color: white;
+	font-size: 13px;
+	text-transform: uppercase;
+}
+
+.direccion a:hover{
+	color: #AAAAAA;
+}
+
+.direccion span {
+	display: block;
+	padding-top: 10px;
+}
+
 .logo{
 	margin: 5px 10px 5px 100px;
 	float: left;
@@ -62,7 +86,7 @@
 
 .flexslider{
 	position: relative;
-	top: 80px;
+	top: 0px;
 	border: 0px !important;
 }
 
@@ -110,6 +134,11 @@
 	font-size: 40px;
 	font-weight: bold;
 	text-transform: uppercase;
+}
+
+.chicle{
+	width: 100%;
+	clear: both;
 }
 
 #services{
@@ -168,7 +197,7 @@
 
 #footer{
 	border-top: 1px solid #DEDEDE;
-	margin-top: 320px;
+	margin-top: 0px;
 	clear: both;
 	width: 100%;
 	position: relative;
@@ -199,4 +228,43 @@
 
 #footer .right img{
 	margin: 30px;
+}
+
+.add_user, .login{
+	font-family: 'Open Sans', sans-serif;
+	position: relative;
+	margin-left: auto;
+	margin-right: auto;
+	width: 300px;
+	top: 10vh;
+	background-color: #e17329;
+	color: white;
+	padding: 40px;
+	font-size: 13px;
+}
+
+.add_user input[type="text"], input[type="email"],input[type="tel"], input[type="password"] {
+  display: block;
+  padding: 2px;
+  margin: 3px;
+  width: 200px;
+  font-size: 14px;
+}
+
+.login input[type="text"], input[type="email"],input[type="tel"], input[type="password"] {
+  display: block;
+  padding: 2px;
+  margin: 3px;
+  width: 200px;
+  font-size: 14px;
+}
+
+.add_user h1, .login h1{
+	padding-bottom: 20px;
+}
+
+.add_user table td, .login table td{
+	width: 100px;
+	padding: 0px;
+	padding-top: 5px;
 }

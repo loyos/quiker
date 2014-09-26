@@ -2,12 +2,14 @@
 	<span>
 		<?php
 			// debug(AuthComponent::user('id')); // accessing the variable outside controller
-			// debug($logged);
+			// 	debug($logged);
 			if($logged){
-				echo $this->Html->link('Logout', array('controller' => 'users', 'action' => 'logout'));
+				echo 'Hola ' . $this->Html->link($username, array('controller' => 'users', 'action' => 'index')) . '<br>';
+				echo $this->Html->link('Cerrar Sesion', array('controller' => 'users', 'action' => 'logout'));
 			}else{
-				echo $this->Html->link('Log in - 	', array('controller' => 'users', 'action' => 'login'));
-				echo $this->Html->link('Register', array('controller' => 'users', 'action' => 'add'));
+				echo $this->Html->link('Inicia Sesion', array('controller' => 'users', 'action' => 'login')). '<br>';
+				echo 'o<br>';
+				echo $this->Html->link('Registrate', array('controller' => 'users', 'action' => 'add'));
 			}
 		?>
 	</span>
@@ -15,7 +17,7 @@
 
 <div class = "menu">
 	<ul>
-		<li> <?php echo $this->Html->link('Home', array()); ?></li>
+		<li> <?php echo $this->Html->link('Home', array('controller' => 'index', 'action' => 'index')); ?></li>
 		<li><?php echo $this->Html->link('About', array()); ?></li>
 		<li><?php echo $this->Html->link('Services', array()); ?></li>
 		<li><?php echo $this->Html->link('Blog', array()); ?></li>

@@ -55,8 +55,28 @@ class AppController extends Controller {
     public function beforeFilter() {
         $this->Auth->allow('view'); // always permitted
 		$logged = $this->Auth->loggedIn();
+		if($logged){
+			$username = $this->Auth->user('username');
+			$this->set('username', $username);
+		}
 		$this->set('logged', $logged);
+		// debug($this->Session->read('Auth'));
 		// debug($this->Auth->());
+    }
+	
+	 public function isAuthorized($user = null) {
+        // Any registered user can access public functions
+        if (empty($this->request->params['admin'])) {
+            return true;
+        }
+
+        // Only admins can access admin functions
+        if (isset($this->request->params['admin'])) {
+            return (bool)($user['rol'] === 'admin');
+        }
+
+        // Default deny
+        return false;
     }
 
 }

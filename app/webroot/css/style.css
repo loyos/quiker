@@ -48,9 +48,9 @@
 .direccion{
 	font-family: 'Open Sans', sans-serif;
 	float: right;
-	height: 0px;
+	height: 20px;
 	background-color: #e17329;
-	padding: 20px 50px 60px 50px;
+	padding: 0px 50px 60px 50px;
 	color: white;
 	width: 200px;
 	font-size: 12px;
@@ -243,20 +243,51 @@
 	font-size: 13px;
 }
 
-.add_user input[type="text"], input[type="email"],input[type="tel"], input[type="password"] {
-  display: block;
-  padding: 2px;
-  margin: 3px;
-  width: 200px;
-  font-size: 14px;
+.add_user{
+	font-family: 'Open Sans', sans-serif;
+	position: relative;
+	margin-left: auto;
+	margin-right: auto;
+	width: 500px;
+	top: 10vh;
+	background-color: #e17329;
+	color: white;
+	padding: 40px;
+	font-size: 13px;
 }
 
-.login input[type="text"], input[type="email"],input[type="tel"], input[type="password"] {
+.add_user .form{
+	position: relative;
+	margin-left: auto;
+	margin-right: auto;
+	width: 420px;
+}
+
+.add_user input[type="text"], .add_user input[type="email"], .add_user input[type="tel"], .add_user input[type="password"] {
+  display: block;
+  padding: 2px;
+  padding-left: 10px;
+  margin: 3px;
+  margin-bottom: 10px;
+  box-shadow: inset #BBB 1px 1px 1px;
+  width: 400px;
+  height: 30px;
+  font-size: 14px;
+  border: 0px solid white;
+}
+
+.login input[type="text"], .login input[type="email"], .login  input[type="tel"], .login  input[type="password"] {
+	box-shadow: inset #BBB 1px 1px 1px;
+	border: 0px solid white;
   display: block;
   padding: 2px;
   margin: 3px;
   width: 200px;
   font-size: 14px;
+  width: 250px;
+  height: 30px;
+  padding-left: 10px;
+  margin-bottom: 10px;
 }
 
 .add_user h1, .login h1{
@@ -267,4 +298,58 @@
 	width: 100px;
 	padding: 0px;
 	padding-top: 5px;
+}
+
+.dashboard, .pedidos{
+	font-family: 'Open Sans', sans-serif;
+	position: relative;
+	margin-left: auto;
+	margin-right: auto;
+	width: 600px;
+	min-height: 250px;
+	height: auto;
+	top: 10vh;
+	background-color: #e17329;
+	color: white;
+	padding: 40px;
+	font-size: 13px;
+	box-shadow: #BBB 7px 5px 5px;
+}
+
+.dashboard .info, .pedidos .info{
+	margin-top: 20px;
+	float: left;
+}
+
+.dashboard .info table td, .pedidos .info table td{
+	padding: 5px;
+}
+
+.dashboard .info a, .pedidos .info a{
+	color: white;
+}
+
+.dashboard .info a:hover{
+	
+}
+
+h3 a{
+	color: white;
+	text-decoration: none;
+	position: relative;
+	top: -30px;
+}
+
+h3 a:hover{
+	color: white;
+	text-decoration: underline;
+	position: relative;
+	top: -30px;
+}
+
+.pedidos table{
+	width: 500px;
+	border-bottom: 1px solid white;
+	margin-bottom: 30px;
+	padding-bottom: 30px;
 }

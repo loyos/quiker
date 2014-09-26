@@ -13,10 +13,12 @@ class UsersController extends AppController {
 
     public function index() {
         $this->User->recursive = 0;
-        $this->set('users', $this->paginate());
+		$user_info = $this->User->findById($this->Auth->user('id'));
+        // $this->set('users', $this->paginate());
+		// debug($this->paginate());
 		// debug($this->Auth->user('id'));
 		// $users = $this->User->find('all');
-		// $this->set('users', $users);
+		$this->set('user_info', $user_info);
     }
 
     public function view($id = null) {
@@ -30,6 +32,9 @@ class UsersController extends AppController {
 	public function login() {
 		if ($this->request->is('post')) {
 			if ($this->Auth->login()) {
+				if($this->Auth->user('rol') == 'admin'){
+					
+				}
 				return $this->redirect($this->Auth->redirect());
 			}
 			$this->Session->setFlash(__('Invalid username or password, try again'));
@@ -53,10 +58,12 @@ class UsersController extends AppController {
             );
         }
     }
+	
 
     public function edit($id = null) {
         $this->User->id = $id;
         if (!$this->User->exists()) {
+			    return $this->redirect(array('action' => 'index'));
             throw new NotFoundException(__('Invalid user'));
         }
         if ($this->request->is('post') || $this->request->is('put')) {

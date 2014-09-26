@@ -36,13 +36,16 @@ class AppController extends Controller {
         'Session',
 		'DebugKit.Toolbar',
         'Auth' => array(
+			'authorize' => 'Controller',
             'loginRedirect' => array(
                 'controller' => 'users',
-                'action' => 'index'
+                'action' => 'index',
+				'admin' => false
             ),
             'logoutRedirect' => array(
                 'controller' => 'users',
-                'action' => 'login'
+                'action' => 'login',
+				'admin' => false
             ),
             'authenticate' => array(
                 'Form' => array(
@@ -64,19 +67,18 @@ class AppController extends Controller {
 		// debug($this->Auth->());
     }
 	
-	 public function isAuthorized($user = null) {
-        // Any registered user can access public functions
-        if (empty($this->request->params['admin'])) {
+	public function isAuthorized($user = null) {
+		// debug($user);
+		// debug($this->request->params['admin']);
+		 if (empty($this->request->params['admin']) && $user['rol'] != 'admin') {
             return true;
         }
-
-        // Only admins can access admin functions
-        if (isset($this->request->params['admin'])) {
+		
+		if (isset($this->request->params['admin'])) {
             return (bool)($user['rol'] === 'admin');
         }
-
-        // Default deny
-        return false;
+		
+		return false;
     }
 
 }

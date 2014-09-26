@@ -4,12 +4,16 @@
 			// debug(AuthComponent::user('id')); // accessing the variable outside controller
 			// 	debug($logged);
 			if($logged){
-				echo 'Hola ' . $this->Html->link($username, array('controller' => 'users', 'action' => 'index')) . '<br>';
-				echo $this->Html->link('Cerrar Sesion', array('controller' => 'users', 'action' => 'logout'));
+				echo 'Hola ' . $this->Html->link($username, array('controller' => 'users', 'action' => 'index', 'admin' => false)) . '<br>';				
+				if($_SESSION['Auth']['User']['rol'] == 'admin'){
+					echo $this->Html->link('Cerrar Sesion', array('controller' => 'users', 'action' => 'logout', 'admin' => true));
+				}else{
+					echo $this->Html->link('Cerrar Sesion', array('controller' => 'users', 'action' => 'logout', 'admin' => false));
+				}
 			}else{
-				echo $this->Html->link('Inicia Sesion', array('controller' => 'users', 'action' => 'login')). '<br>';
+				echo $this->Html->link('Inicia Sesion', array('controller' => 'users', 'action' => 'login', 'admin' => false)). '<br>';
 				echo 'o<br>';
-				echo $this->Html->link('Registrate', array('controller' => 'users', 'action' => 'add'));
+				echo $this->Html->link('Registrate', array('controller' => 'users', 'action' => 'add', 'admin' => false));
 			}
 		?>
 	</span>
@@ -17,7 +21,7 @@
 
 <div class = "menu">
 	<ul>
-		<li> <?php echo $this->Html->link('Home', array('controller' => 'index', 'action' => 'index')); ?></li>
+		<li> <?php echo $this->Html->link('Home', array('controller' => 'index', 'action' => 'index', 'admin' => false)); ?></li>
 		<li><?php echo $this->Html->link('About', array()); ?></li>
 		<li><?php echo $this->Html->link('Services', array()); ?></li>
 		<li><?php echo $this->Html->link('Blog', array()); ?></li>

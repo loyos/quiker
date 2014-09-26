@@ -33,15 +33,19 @@ class UsersController extends AppController {
 		if ($this->request->is('post')) {
 			if ($this->Auth->login()) {
 				if($this->Auth->user('rol') == 'admin'){
-					
+					return $this->redirect(array('controller' => 'pedidos', 'action' => 'index', 'admin' => true));
 				}
-				return $this->redirect($this->Auth->redirect());
+				return $this->redirect(array('controller' => 'users', 'action' => 'index', 'admin' => false));
 			}
 			$this->Session->setFlash(__('Invalid username or password, try again'));
 		}
 	}
 	
 	public function logout() {
+		return $this->redirect($this->Auth->logout());
+	}
+	
+	public function admin_logout() {
 		return $this->redirect($this->Auth->logout());
 	}
 

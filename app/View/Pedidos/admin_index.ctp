@@ -21,7 +21,9 @@
 					<td><b> <?php echo $p['Pedido']['id']; ?> </b></td>				
 					<td> <b> <?php echo $p['Pedido']['status']; ?> </b> </td>
 					<td> <b> <?php echo $p['Pedido']['numero_quiker']; ?>  </b></td>
-					<td><?php echo $this->Html->link('Editar informacion', array('controller' => 'pedidos', 'action' => 'admin_edit', $p['Pedido']['id'])); ?></td>
+					<td><?php echo $this->Html->link('Editar informacion', array('controller' => 'pedidos', 'action' => 'edit', 'admin' => true, $p['Pedido']['id'])); ?>
+					</td>
+					<td><?php echo $this->Html->link('Ver Usuario Relacionado', array('controller' => 'users', 'action' => 'view', $p['Pedido']['numero_quiker'])); ?></td>
 				</tr>
 			</table>
 		<?php

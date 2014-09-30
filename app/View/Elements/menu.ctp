@@ -20,11 +20,23 @@
 </div>
 
 <div class = "menu">
-	<ul>
-		<li> <?php echo $this->Html->link('Home', array('controller' => 'index', 'action' => 'index', 'admin' => false)); ?></li>
-		<li><?php echo $this->Html->link('About', array()); ?></li>
-		<li><?php echo $this->Html->link('Services', array()); ?></li>
-		<li><?php echo $this->Html->link('Blog', array()); ?></li>
-		<li><?php echo $this->Html->link('Contacts', array()); ?></li>
-	</ul>
+	<?php 
+		if(!empty($_SESSION['Auth']['User']['rol']) && $_SESSION['Auth']['User']['rol'] == 'admin'){ ?>
+			<ul>
+				<li> <?php echo $this->Html->link('Pedidos', array('controller' => 'pedidos', 'action' => 'index', 'admin' => true)); ?></li>
+				<li><?php echo $this->Html->link('Usuarios', array('controller' => 'users', 'action' => 'index', 'admin' => true)); ?></li>
+			</ul>
+	
+	<?php
+		}else{ ?>
+			<ul>
+				<li> <?php echo $this->Html->link('Home', array('controller' => 'index', 'action' => 'index', 'admin' => false)); ?></li>
+				<li><?php echo $this->Html->link('About', array()); ?></li>
+				<li><?php echo $this->Html->link('Services', array()); ?></li>
+				<li><?php echo $this->Html->link('Blog', array()); ?></li>
+				<li><?php echo $this->Html->link('Contacts', array()); ?></li>
+			</ul>
+	<?php
+		}
+	?>
 </div>

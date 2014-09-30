@@ -48,6 +48,16 @@ class UsersController extends AppController {
 	public function admin_logout() {
 		return $this->redirect($this->Auth->logout());
 	}
+	
+	public function admin_index(){
+		$users = $this->User->find('all');
+		$this->set('users', $users);
+	}
+	
+	public function admin_view($id = null){
+		$user = $this->User->findById($id);
+		$this->set('user', $user);
+	}
 
     public function add() {
 	

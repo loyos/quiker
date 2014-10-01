@@ -15,5 +15,3 @@
  */
 ?>
 <?php echo $this->fetch('content'); ?>
-
-This email was sent using testo es text he CakePHP Framework, http://cakephp.org.

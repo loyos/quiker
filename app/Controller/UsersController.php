@@ -87,11 +87,18 @@ class UsersController extends AppController {
 			$this->request->data['User']['active']= 0;
             if ($this->User->save($this->request->data)) {
 				$Email = new CakeEmail();
-				$Email->template('registro');
-				$Email->from(array('me@example.com' => 'My Site'));
-				$Email->to($this->request->data['User']['email']);
-				$Email->subject('About');
-				$Email->send('My message');
+					
+					// sending email
+					
+						$Email->template('welcome', 'fancy')
+						->emailFormat('both')
+						->to($this->request->data['User']['email'])
+						->from('app@domain.com')
+						->send();
+					
+					// email sent
+					
+				
                 $this->Session->setFlash(__('The user has been saved'));
                 return $this->redirect(array('action' => 'index'));
             }

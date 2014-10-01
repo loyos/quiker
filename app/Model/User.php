@@ -42,7 +42,11 @@ class User extends AppModel {
             'required' => array(
                 'rule' => array('notEmpty'),
                 'message' => 'A username is required'
-            )
+            ),
+			'required' => array(
+				'rule' => array('unique_username'),
+				'message' => 'Nombre de usuario ya ocupado'
+			),
         ),
         'password' => array(
             'required' => array(
@@ -51,6 +55,22 @@ class User extends AppModel {
             )
         )
     );
+	
+	public function unique_username($username){
+		// debug($username);
+		$username = $username['username'];
+		$check = $this->find('all', array(
+			'conditions' => array(
+				'username' => $username
+			)
+		));
+		
+		if(!empty($check)){
+			return false;
+		}else{
+			return true;
+		}
+	}
 	
 	public function getNumber(){
 		$source = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ12345678901234567890';

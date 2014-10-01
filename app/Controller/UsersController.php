@@ -89,9 +89,7 @@ class UsersController extends AppController {
 			$this->request->data['User']['key'] = $key;
             if ($this->User->save($this->request->data)) {
 				$Email = new CakeEmail();
-				debug($this->request->data['User']['id']);
-				die();
-				$Email->viewVars(array('id' => $this->request->data['User']['id']));
+				$Email->viewVars(array('username' => $this->request->data['User']['username']));
 				$Email->viewVars(array('key' => $this->request->data['User']['key']));
 					
 					// sending email
@@ -109,9 +107,9 @@ class UsersController extends AppController {
                 return $this->redirect(array('action' => 'index'));
             }
             $this->Session->setFlash(
-                __('The user could not be saved. Please, try again.')
+                __('Error al crear el usuario. Por favor corrige los errores')
             );
-			return $this->redirect(array('action' => 'index'));
+			// return $this->redirect(array('action' => 'index'));
         }
     }
 	

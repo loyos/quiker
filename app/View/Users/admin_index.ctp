@@ -3,7 +3,8 @@
  ?>
  
 <div class = "dashboard">
-	<h1> Todos los Usuarios </h1>
+	<h1> Todos los Usuarios </h1> <h3 style = "float: right;"> <?php echo $this->Html->link('Agregar Usuario', array('controller' => 'users', 'action' => 'admin_add'));  ?> </h3>
+	<?php echo $this->element('search_usuarios'); ?>
 	
 	<div class = "info">
 		<?php foreach($users as $u){ ?>
@@ -20,5 +21,7 @@
 				</tr>
 			</table>
 		<?php }?>
+	</div>
+	<div class = "chicle">
 	</div>
 </div>

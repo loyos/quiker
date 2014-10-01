@@ -6,6 +6,10 @@ class PedidosController extends AppController {
 	
 	public $uses = array();
 	
+	public $components = array(
+		'Search.Prg', 'Paginator'
+	);
+	
 	public function beforeFilter() {
         parent::beforeFilter();
         // $this->Auth->allow('add');
@@ -23,8 +27,11 @@ class PedidosController extends AppController {
     }
 	
 	public function admin_index(){
-		$pedidos_info = $this->Pedido->find('all');
-		$this->set('pedidos_info', $pedidos_info);
+		$this->Prg->commonProcess();
+        $this->Paginator->settings['conditions'] = $this->Pedido->parseCriteria($this->Prg->parsedParams());
+        $this->set('pedidos_info', $this->Paginator->paginate());
+		// $pedidos_info = $this->Pedido->find('all');
+		// $this->set('pedidos_info', $pedidos_info);
 	}
 	
 	public function admin_edit($id = null){

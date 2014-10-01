@@ -6,6 +6,10 @@ class UsersController extends AppController {
 	
 	public $uses = array();
 	
+	public $components = array(
+        'Search.Prg', 'Paginator'
+    );
+	
 	 public function beforeFilter() {
         parent::beforeFilter();
         $this->Auth->allow('add');
@@ -50,14 +54,30 @@ class UsersController extends AppController {
 	}
 	
 	public function admin_index(){
-		$users = $this->User->find('all');
-		$this->set('users', $users);
+		$this->Prg->commonProcess();
+        $this->Paginator->settings['conditions'] = $this->User->parseCriteria($this->Prg->parsedParams());
+        $this->set('users', $this->Paginator->paginate());
+		// $users = $this->User->find('all');
+		// $this->set('users', $users);
 	}
 	
 	public function admin_view($id = null){
 		$user = $this->User->findById($id);
 		$this->set('user', $user);
 	}
+	
+	public function admin_add() {
+	    if ($this->request->is('post')) {
+            $this->User->create();
+            if ($this->User->save($this->request->data)) {
+                $this->Session->setFlash(__('The user has been saved'));
+                return $this->redirect(array('action' => 'index'));
+            }
+            $this->Session->setFlash(
+                __('The user could not be saved. Please, try again.')
+            );
+        }
+    }
 
     public function add() {
 	

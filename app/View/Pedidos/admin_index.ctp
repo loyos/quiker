@@ -4,6 +4,7 @@
  
 <div class = "pedidos">
 	<h1> Todos los pedidos </h1> <h3 style = "float: right;"> <?php echo $this->Html->link('Agregar', array('controller' => 'pedidos', 'action' => 'admin_edit'));  ?> </h3>
+	<?php echo $this->element('search_pedidos'); ?>
 	
 	<div class = "info">
 		

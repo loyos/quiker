@@ -350,6 +350,12 @@ h3 a:hover{
 .pedidos table{
 	width: 500px;
 	border-bottom: 1px solid white;
-	margin-bottom: 30px;
+	margin-bottom: 0px;
 	padding-bottom: 30px;
+}
+
+.search{
+	float: left;
+	margin-top: 30px;
+	margin-bottom: 30px;
 }

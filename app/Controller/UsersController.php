@@ -90,7 +90,7 @@ class UsersController extends AppController {
 					
 					// sending email
 					
-						$Email->template('welcome', 'fancy')
+						$Email->template('registro')
 						->emailFormat('both')
 						->to($this->request->data['User']['email'])
 						->from('app@domain.com')

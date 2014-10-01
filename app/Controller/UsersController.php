@@ -85,9 +85,13 @@ class UsersController extends AppController {
         if ($this->request->is('post')) {
             $this->User->create();
 			$this->request->data['User']['active']= 0;
+			$key = $this->User->getNumber();
+			$this->request->data['User']['key'] = $key;
             if ($this->User->save($this->request->data)) {
 				$Email = new CakeEmail();
-				$Email->viewVars(array('value' => 12345));	
+				$Email->viewVars(array('id' => $this->request->data['User']['id']));
+				$Email->viewVars(array('key' => $this->request->data['User']['key']));
+					
 					// sending email
 					
 						$Email->template('add', null)
@@ -99,7 +103,7 @@ class UsersController extends AppController {
 					// email sent
 					
 				
-                $this->Session->setFlash(__('The user has been saved'));
+                $this->Session->setFlash(__('Has sido registrado con exito, revisa tu email y sigue los pasos para validar tu cuenta'), 'success');
                 return $this->redirect(array('action' => 'index'));
             }
             $this->Session->setFlash(
@@ -108,6 +112,27 @@ class UsersController extends AppController {
 			return $this->redirect(array('action' => 'index'));
         }
     }
+	
+	public function active_account($user_id,$key) {
+		$user = $this->User->find('first',array(
+			'conditions' => array(
+				'User.id' => $user_id,
+				'User.key' => $key
+			)
+		));
+		if (!empty($user)) {
+			$active_user = array('User'=>array(
+				'active' => 1,
+				'id' => $user_id,
+				'key' => ''
+			));
+			$this->User->save($active_user);
+			$this->Session->setFlash(__('Your user has been activated'), 'success');
+		} else {
+			$this->Session->setFlash(__('Incorrect link'), 'success');
+		}
+		$this->redirect(array('controller' => 'index', 'action'=>'index'));
+	}
 	
 
     public function edit($id = null) {

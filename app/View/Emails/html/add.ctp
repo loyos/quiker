@@ -1,3 +1,6 @@
 main plain sin nada!! 
 
-<?php echo $value; ?>
+<?php
+	echo 'clave de activacion de correo'. $key;
+	echo '<br> mi ID: '. $id;
+?>

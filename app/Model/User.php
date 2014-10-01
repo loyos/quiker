@@ -51,6 +51,12 @@ class User extends AppModel {
         'password' => array(
             'required' => array(
                 'rule' => array('notEmpty'),
+                'message' => 'Este email ya esta en uso.'
+            )
+        ),
+		'email' => array(
+            'required' => array(
+                'rule' => array('unique_email'),
                 'message' => 'A password is required'
             )
         )
@@ -62,6 +68,22 @@ class User extends AppModel {
 		$check = $this->find('all', array(
 			'conditions' => array(
 				'username' => $username
+			)
+		));
+		
+		if(!empty($check)){
+			return false;
+		}else{
+			return true;
+		}
+	}
+	
+	public function unique_email($email){
+		// debug($username);
+		$email = $email['email'];
+		$check = $this->find('all', array(
+			'conditions' => array(
+				'email' => $email
 			)
 		));
 		

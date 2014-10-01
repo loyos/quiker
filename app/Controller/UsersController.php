@@ -89,6 +89,8 @@ class UsersController extends AppController {
 			$this->request->data['User']['key'] = $key;
             if ($this->User->save($this->request->data)) {
 				$Email = new CakeEmail();
+				debug($this->request->data['User']['id']);
+				die();
 				$Email->viewVars(array('id' => $this->request->data['User']['id']));
 				$Email->viewVars(array('key' => $this->request->data['User']['key']));
 					

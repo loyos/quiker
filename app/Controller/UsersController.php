@@ -113,25 +113,25 @@ class UsersController extends AppController {
         }
     }
 	
-	public function active_account($user_id,$key) {
+	public function active_account($username,$key) {
 		$user = $this->User->find('first',array(
 			'conditions' => array(
-				'User.id' => $user_id,
+				'User.username' => $username,
 				'User.key' => $key
 			)
 		));
 		if (!empty($user)) {
 			$active_user = array('User'=>array(
 				'active' => 1,
-				'id' => $user_id,
+				'id' => $user['User']['id'],
 				'key' => ''
 			));
 			$this->User->save($active_user);
-			$this->Session->setFlash(__('Your user has been activated'), 'success');
+			$this->Session->setFlash(__('Your user has been activated'));
 		} else {
-			$this->Session->setFlash(__('Incorrect link'), 'success');
+			$this->Session->setFlash(__('Incorrect link'));
 		}
-		$this->redirect(array('controller' => 'index', 'action'=>'index'));
+		$this->redirect(array('controller' => 'users', 'action'=>'login'));
 	}
 	
 

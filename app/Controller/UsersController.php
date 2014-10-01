@@ -87,7 +87,7 @@ class UsersController extends AppController {
 			$this->request->data['User']['active']= 0;
             if ($this->User->save($this->request->data)) {
 				$Email = new CakeEmail();
-					
+				$Email->viewVars(array('value' => 12345));	
 					// sending email
 					
 						$Email->template('add', null)

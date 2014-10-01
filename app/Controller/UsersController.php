@@ -1,6 +1,7 @@
 <?php
 
 App::uses('AppController', 'Controller');
+App::uses('CakeEmail', 'Network/Email');
 
 class UsersController extends AppController {
 	
@@ -83,7 +84,13 @@ class UsersController extends AppController {
 	
         if ($this->request->is('post')) {
             $this->User->create();
+			$this->request->data['User']['active']= 0;
             if ($this->User->save($this->request->data)) {
+				$Email = new CakeEmail();
+				$Email->from(array('me@example.com' => 'My Site'));
+				$Email->to($this->request->data['User']['email']);
+				$Email->subject('About');
+				$Email->send('My message');
                 $this->Session->setFlash(__('The user has been saved'));
                 return $this->redirect(array('action' => 'index'));
             }

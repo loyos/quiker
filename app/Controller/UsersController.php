@@ -13,7 +13,7 @@ class UsersController extends AppController {
 	
 	 public function beforeFilter() {
         parent::beforeFilter();
-        $this->Auth->allow('add');
+        $this->Auth->allow('add','active_account');
     }
 
     public function index() {

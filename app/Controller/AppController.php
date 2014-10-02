@@ -48,6 +48,9 @@ class AppController extends Controller {
 				'admin' => false
             ),
             'authenticate' => array(
+				'all' => array  (
+					'scope' => array ('User.active' => 1)
+				),
                 'Form' => array(
                     'passwordHasher' => 'Blowfish'
                 )

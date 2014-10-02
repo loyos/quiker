@@ -51,13 +51,13 @@ class User extends AppModel {
         'password' => array(
             'required' => array(
                 'rule' => array('notEmpty'),
-                'message' => 'Este email ya esta en uso.'
+                'message' => 'A password is required'
             )
         ),
 		'email' => array(
             'required' => array(
                 'rule' => array('unique_email'),
-                'message' => 'A password is required'
+                'message' => 'Este email ya esta en uso.'
             )
         )
     );

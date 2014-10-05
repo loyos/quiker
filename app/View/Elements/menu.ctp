@@ -31,10 +31,9 @@
 		}else{ ?>
 			<ul>
 				<li> <?php echo $this->Html->link('Home', array('controller' => 'index', 'action' => 'index', 'admin' => false)); ?></li>
-				<li><?php echo $this->Html->link('About', array()); ?></li>
-				<li><?php echo $this->Html->link('Services', array()); ?></li>
-				<li><?php echo $this->Html->link('Blog', array()); ?></li>
-				<li><?php echo $this->Html->link('Contacts', array()); ?></li>
+				<li><?php echo $this->Html->link('Como funciona', array()); ?></li>
+				<li><?php echo $this->Html->link('Servicios', array()); ?></li>
+				<li><?php echo $this->Html->link('Contacto', array('controller' => 'users', 'action' => 'contacto')); ?></li>
 			</ul>
 	<?php
 		}

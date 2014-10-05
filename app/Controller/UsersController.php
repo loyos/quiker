@@ -5,7 +5,7 @@ App::uses('CakeEmail', 'Network/Email');
 
 class UsersController extends AppController {
 	
-	public $uses = array();
+	public $uses = array('Contacto');
 	
 	public $components = array(
         'Search.Prg', 'Paginator'
@@ -13,7 +13,7 @@ class UsersController extends AppController {
 	
 	 public function beforeFilter() {
         parent::beforeFilter();
-        $this->Auth->allow('add','active_account');
+        $this->Auth->allow('add','active_account','contacto');
     }
 
     public function index() {
@@ -79,6 +79,14 @@ class UsersController extends AppController {
                 __('The user could not be saved. Please, try again.')
             );
         }
+    }
+	
+	public function admin_delete($id) {
+	    $this->User->deleteAll(array('User.id' => $id));
+		$this->Session->setFlash(
+			__('Usuario Eliminado.')
+		);
+		return $this->redirect(array('action' => 'index'));
     }
 
     public function add() {
@@ -169,5 +177,32 @@ class UsersController extends AppController {
         }
         $this->Session->setFlash(__('User was not deleted'));
         return $this->redirect(array('action' => 'index'));
+    }
+	
+	public function contacto() {
+        if ($this->request->is('post')) {
+            if ($this->Contacto->save($this->request->data)) {
+				
+				$Email = new CakeEmail();
+				$Email->viewVars(array('nombre' => $this->request->data['Contacto']['nombre']));
+				$Email->viewVars(array('email' => $this->request->data['Contacto']['email']));
+				$Email->viewVars(array('telefono' => $this->request->data['Contacto']['telefono']));
+				$Email->viewVars(array('mensaje' => $this->request->data['Contacto']['mensaje']));
+				$Email->viewVars(array('direccion' => $this->request->data['Contacto']['direccion']));
+					
+					// sending email
+					
+						$Email->template('contacto', null)
+						->emailFormat('html')
+						->to('loyenrique1@gmail.com')
+						->from('contacto@quikerwire.com')
+						->send();
+					
+					// email sent
+				
+                $this->Session->setFlash(__('Hemos recibido tu mensaje, te contestaremos lo antes posible!'));
+                return $this->redirect(array('controller' => 'index', 'action' => 'index'));
+            }
+		}
     }
 }

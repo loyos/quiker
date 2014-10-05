@@ -61,8 +61,9 @@
 					QUIKERWIRE (C) 2014  |  PRIVACY POLICY
 				</div>
 				<div class = "right">
-					<?php echo $this->Html->image('header-twitter.png', array('width' => '40px')); ?>
-					<?php echo $this->Html->image('header-facebook.png', array('width' => '15px')); ?>
+					<?php echo $this->Html->link($this->Html->image('header-twitter.png', array('width' => '40px')), 'https://twitter.com/quikerwireenvio', array('escape'=> false)); ?>
+					<?php echo $this->Html->link($this->Html->image('header-facebook.png', array('width' => '15px')), 'https://www.facebook.com/quikerwire', array('escape'=> false)); ?>
+					<?php echo $this->Html->link($this->Html->image('ig.png', array('width' => '40px')), 'http://instagram.com/quikerwireenvios', array('escape'=> false)); ?>
 				</div>
 			</div>
 		</div>

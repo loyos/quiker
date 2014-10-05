@@ -18,6 +18,7 @@
 					<td> <b> <?php echo $u['User']['name']; ?> </b></td>
 					<td> <b> <?php echo $u['User']['lastname']; ?> </b></td>
 					<td><b> <?php echo $this->Html->link('Ver detalles', array('controller' => 'users', 'action' => 'view', 'admin' => true, $u['User']['id'])); ?> </b></td>
+					<td><b> <?php echo $this->Html->link('Borrar Usuario', array('controller' => 'users', 'action' => 'delete', 'admin' => true, $u['User']['id'])); ?> </b></td>
 				</tr>
 			</table>
 		<?php }?>

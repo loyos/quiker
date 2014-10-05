@@ -5,7 +5,7 @@ App::uses('CakeEmail', 'Network/Email');
 
 class UsersController extends AppController {
 	
-	public $uses = array('Contacto');
+	public $uses = array();
 	
 	public $components = array(
         'Search.Prg', 'Paginator'
@@ -106,7 +106,7 @@ class UsersController extends AppController {
 						$Email->template('add', null)
 						->emailFormat('html')
 						->to($this->request->data['User']['email'])
-						->from('app@domain.com')
+						->from('quikerwireenvios@gmail.com')
 						->send();
 					
 					// email sent
@@ -180,6 +180,7 @@ class UsersController extends AppController {
     }
 	
 	public function contacto() {
+		$this->loadModel('Contacto');
         if ($this->request->is('post')) {
             if ($this->Contacto->save($this->request->data)) {
 				
@@ -194,7 +195,7 @@ class UsersController extends AppController {
 					
 						$Email->template('contacto', null)
 						->emailFormat('html')
-						->to('loyenrique1@gmail.com')
+						->to('quikerwireenvios@gmail.com')
 						->from('contacto@quikerwire.com')
 						->send();
 					

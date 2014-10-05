@@ -8,11 +8,18 @@ class IndexController extends AppController {
 	
 	 public function beforeFilter() {
         parent::beforeFilter();
-        $this->Auth->allow('index');
+        $this->Auth->allow('index','servicios','como_funciona');
     }
 
 	public function index(){
 		
 	}
 	
+	public function servicios(){
+		
+	}
+	
+	public function como_funciona(){
+		
+	}	
 }

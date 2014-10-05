@@ -42,7 +42,7 @@
 }
 
 .menu ul li a:hover{
-	color: #e17329;
+	color: #E17329;
 }
 
 .direccion{
@@ -117,7 +117,7 @@
 }
 
 #big_content .left .title{
-	font-size: 60px;
+	font-size: 30px;
 	font-weight: bold;
 	text-transform: uppercase;
 }
@@ -358,4 +358,71 @@ h3 a:hover{
 	float: left;
 	margin-top: 30px;
 	margin-bottom: 30px;
+}
+
+.servicios{
+	font-family: 'Open Sans', sans-serif;
+	position: relative;
+	margin-left: auto;
+	margin-right: auto;
+	width: 60%;
+	padding: 40px;
+	color: #68717A; 
+}
+
+.servicios h1{
+	color: #68717A;
+	margin: 40px;
+	display: block;
+}
+
+.servicios p{
+	font-size: 14px;
+	text-align: justify;
+	margin: 15px;
+}
+
+.servicios ol{
+	list-style-type: circle;
+}
+
+.servicios ol li{
+	font-size: 15px;
+}
+
+.contacto{
+	font-family: 'Open Sans', sans-serif;
+	position: relative;
+	margin-left: auto;
+	margin-right: auto;
+	width: 50%;
+	padding: 40px;
+	padding-bottom: 0px;
+	color: #68717A; 
+}
+
+.contacto p{
+	margin: 5px;
+}
+
+#flashMessage{
+	position: fixed;
+	margin-left: 30%;
+	margin-right: auto;
+	width: 500px;
+	color: white;
+	background-color: #E17329;
+	padding: 20px;
+	margin-top: 20px;
+	z-index: 10000;
+	text-align: center;
+	font-family: 'Open Sans', sans-serif;
+}
+
+input[type=submit] {
+	padding: 10px;
+}
+
+textarea {
+	width: 415px;
 }

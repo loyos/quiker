@@ -139,14 +139,14 @@ class UsersController extends AppController {
 			$this->Session->setFlash(__('El usuario ha sido activado'));
 			
 			$Email = new CakeEmail();
-				$Email->viewVars(array('nombre' => $this->request->data['Contacto']['nombre']));
-				$Email->viewVars(array('id' => $this->request->data['Contacto']['id']));
+				$Email->viewVars(array('nombre' => $user['User']['nombre']));
+				$Email->viewVars(array('id' => $user['User']['id']));
 					
 					// sending email
 					
 						$Email->template('bienvenida', null)
 						->emailFormat('html')
-						->to($this->request->data['Contacto']['email'])
+						->to($user['User']['email'])
 						->from('contacto@quikerwire.com')
 						->send();
 					

@@ -2,14 +2,13 @@
 	<h1>QUIKER WIRE ENVIOS </h1>
 
 	<h3> Nuestros datos de contacto.. </h3>
-	
-<p>Carlos Valdivieso</p>
-<p>Managing Director</p>
 
 <p>3900 NW 79th St #594 .MIAMI  FL 33166 </p>
 <p>0212-3357585 </p>
 <p>001-786-534-9686 </p>
 <p>quikerwireenvios.com </p>
+<p> quikerwireenvios@gmail.com </p>
+<p> quikerwireenvios1@gmail.com </p>
 <p>twiter: @quikerwireenvios </p>
 <p>facebok: quikerwireenvios  </p>
 <p>instagram:quikerwireenvios</p>

@@ -112,7 +112,7 @@ class UsersController extends AppController {
 					// email sent
 					
 				
-                $this->Session->setFlash(__('Has sido registrado con exito, revisa tu email y sigue los pasos para validar tu cuenta'), 'success');
+                $this->Session->setFlash(__('Has sido registrado con exito, revisa tu email y sigue los pasos para validar tu cuenta'));
                 return $this->redirect(array('action' => 'index'));
             }
             $this->Session->setFlash(
@@ -136,9 +136,23 @@ class UsersController extends AppController {
 				'key' => ''
 			));
 			$this->User->save($active_user);
-			$this->Session->setFlash(__('Your user has been activated'));
+			$this->Session->setFlash(__('El usuario ha sido activado'));
+			
+			$Email = new CakeEmail();
+				$Email->viewVars(array('nombre' => $this->request->data['Contacto']['nombre']));
+				$Email->viewVars(array('id' => $this->request->data['Contacto']['id']));
+					
+					// sending email
+					
+						$Email->template('bienvenida', null)
+						->emailFormat('html')
+						->to($this->request->data['Contacto']['email'])
+						->from('contacto@quikerwire.com')
+						->send();
+					
+					// email sent
 		} else {
-			$this->Session->setFlash(__('Incorrect link'));
+			$this->Session->setFlash(__('Link incorrecto'));
 		}
 		$this->redirect(array('controller' => 'users', 'action'=>'login'));
 	}

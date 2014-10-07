@@ -31,6 +31,11 @@
 		echo $this->fetch('meta');
 		echo $this->fetch('css');
 		echo $this->fetch('script');
+		echo $this->Html->meta(
+			'favicon.ico',
+			'/favicon.ico',
+			array('type' => 'icon')
+		);
 	?>
 	<script type="text/javascript" charset="utf-8">
 		$(window).load(function() {

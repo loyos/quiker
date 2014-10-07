@@ -7,5 +7,5 @@
 	echo '<tr> <td> Password: '. $this->Form->input('password', array('label' => false)) .'</td></tr></table>';
 ?>
 
-<?php echo '<br>'. $this->Form->end(__('Registrarse')); ?>
+<?php echo '<br>'. $this->Form->end(__('Entrar')); ?>
 </div>

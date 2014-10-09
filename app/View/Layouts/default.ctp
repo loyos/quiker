@@ -50,7 +50,8 @@
 	<div id="container">
 		<div id="header">
 			<div class = "logo">
-				<?php echo $this->Html->image('logo.png', array('width' => '210px')); ?>
+				<?php echo $this->Html->link($this->Html->image('logo.png', array('width' => '210px')), array('controller' => 'index', 'action' => 'index'), array('escape'=> false)); ?>
+				
 			</div>
 			<?php echo $this->element('menu'); ?>
 		</div>

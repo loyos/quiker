@@ -49,12 +49,4 @@
 	</ol>
 		</p>
 		<br>
-		<p>
-			<b>Como enviar giros a Venezuela </b>
-		</p>
-	<ol>
-		<p>
-			<li>Solamente hacemos entregas de giros directamente en cuentas de banco no damos efectivo bajo ninguna circunstancia el deposito se hace el mismo dia que se envié el giro. Para mas información llamar o contactarse con nosotros a nuestro email quikerwireenvios@gmail.com. </li>
-		</p>
-	</ol>
 </div>

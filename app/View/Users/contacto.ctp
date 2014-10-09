@@ -9,7 +9,7 @@
 <p>quikerwireenvios.com </p>
 <p> quikerwireenvios@gmail.com </p>
 <p> quikerwireenvios1@gmail.com </p>
-<p>twiter: @quikerwireenvios </p>
+<p>twiter: @quikerwireenvio </p>
 <p>facebok: quikerwireenvios  </p>
 <p>instagram:quikerwireenvios</p>
 	<br>

@@ -47,10 +47,11 @@
 		<div class = "service">
 			<div class = "left" style = "border-top: 1px solid #DEDEDE;">
 				<div class = "title">
-					Service 1
+					Quiker Wire
 				</div>
 				<p>
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras ac odio a purus fermentum efficitur sit amet non ex. Duis volutpat vel mauris ac viverra.
+					Quiker Wire Envios dispone de estratégicas alianzas en USA con las más prestigiosas empresas de transporte.
+					Al utilizar nuestros servicios de carga aérea o marítima cuenta con un mes de almacén en USA sin costo alguno.
 				</p>
 			</div>
 			<div class = "right">
@@ -73,10 +74,10 @@
 		<div class = "service">
 				<div class = "left">
 				<div class = "title">
-					Service 1
+					Beneficio
 				</div>
 				<p>
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras ac odio a purus fermentum efficitur sit amet non ex. Duis volutpat vel mauris ac viverra.
+					El mayor beneficio de trabajar con Quiker Wire Envios es que es una empresa confiable y segura que le ofrece rápida respuesta operacional con precios competitivos, aumentando el rendimiento y la productividad de su empresa.
 				</p>
 			</div>
 			<div class = "right">

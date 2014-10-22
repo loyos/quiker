@@ -5,7 +5,7 @@
 		echo $this->Form->create('User', array( "enctype" => "multipart/form-data"));
 		
 		echo '<table class="table_reset_password">';
-		echo '<tr><td>';
+		echo '<tr><td colspan="2">';
 		echo 'Reinicio de Contraseña.';
 		echo '</td></tr>';
 		echo '<tr><td>';

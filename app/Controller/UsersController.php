@@ -269,10 +269,10 @@ class UsersController extends AppController {
 				$Email->template('reset_password', null);
 				$Email->viewVars(compact('id','key','name'));
 				$Email->send();
-				$this->Session->setFlash(__("you'll receive an email with instructions"), 'success'); 
+				$this->Session->setFlash(__("you'll receive an email with instructions")); 
 				$this->redirect(array('controller' => 'index', 'action'=>'index'));
 			} else {
-				$this->Session->setFlash(__("Invalid email"), 'success'); 
+				$this->Session->setFlash(__("Invalid email")); 
 			}
 		}
 	}
@@ -283,7 +283,7 @@ class UsersController extends AppController {
 			$data['User']['key'] = '';
 			if ($this->User->save($data)) {
 						
-				$this->Session->setFlash(__("The password has been changed"), 'success'); 
+				$this->Session->setFlash(__("The password has been changed")); 
 				$this->redirect(array('controller' => 'users', 'action'=>'login'));
 			}
 		}else {
@@ -296,7 +296,7 @@ class UsersController extends AppController {
 			if (!empty($user)) {
 				$this->set(compact('id'));
 			} else {
-				$this->Session->setFlash(__("Invalid link"), 'success'); 
+				$this->Session->setFlash(__("Invalid link")); 
 				$this->redirect(array('controller' => 'index', 'action'=>'index'));
 			}
 		}

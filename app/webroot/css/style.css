@@ -430,3 +430,19 @@ input[type=submit] {
 textarea {
 	width: 415px;
 }
+
+.forgot_password{
+		font-family: 'Open Sans', sans-serif;
+	position: relative;
+	margin-left: auto;
+	margin-right: auto;
+	width: 600px;
+	min-height: 250px;
+	height: auto;
+	top: 10vh;
+	background-color: #e17329;
+	color: white;
+	padding: 40px;
+	font-size: 13px;
+	box-shadow: #BBB 7px 5px 5px;
+}

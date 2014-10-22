@@ -1,4 +1,3 @@
-<span class="login_title">Change your password</span>
 <div class = "forgot_password">
 	<div  style = "padding-top: 50px; padding-bottom: 50px; position: relative; margin-left: auto; margin-right: auto; width: 350px; text-align: center;">
 		<?php

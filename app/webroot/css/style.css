@@ -243,6 +243,10 @@
 	font-size: 13px;
 }
 
+.login a{
+	color: white;
+}
+
 .add_user{
 	font-family: 'Open Sans', sans-serif;
 	position: relative;

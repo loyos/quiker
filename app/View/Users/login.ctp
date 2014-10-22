@@ -4,7 +4,8 @@
 	echo  $this->Form->create('User');
 	echo  '<table>';
 	echo  '<tr> <td> Username: ' .$this->Form->input('username', array('label' => false)) . ' </td></tr>';
-	echo '<tr> <td> Password: '. $this->Form->input('password', array('label' => false)) .'</td></tr></table>';
+	echo '<tr> <td> Password: '. $this->Form->input('password', array('label' => false)) .'</td></tr>';
+	echo '<tr> <td>'. $this->Html->link('¿Olvidaste tu contraseña?', array('controller' => 'users', 'action' => 'forgot_password')).' </td></tr></table>';
 ?>
 
 <?php echo '<br>'. $this->Form->end(__('Entrar')); ?>

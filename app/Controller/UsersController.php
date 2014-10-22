@@ -13,7 +13,7 @@ class UsersController extends AppController {
 	
 	 public function beforeFilter() {
         parent::beforeFilter();
-        $this->Auth->allow('add','active_account','contacto');
+        $this->Auth->allow('add','active_account','contacto','forgot_password');
     }
 
     public function index() {
@@ -240,4 +240,66 @@ class UsersController extends AppController {
             }
 		}
     }
+	
+	function forgot_password(){
+		if (!empty($this->data)) {
+			//Send the email 
+			$email = $this->data['User']['email'];
+			$user = $this->User->find('first',array(
+				'conditions' => array('User.email' => $email)
+			));
+			if (!empty($user)) {
+				if (!empty($user['User']['name']) && !empty($user['User']['lastname'])) {
+					$name = $user['User']['name'].' '.$user['User']['lastname'];
+				} else {
+					$name = $user['User']['username'];
+				}
+				$id = $user['User']['id'];
+				$key = $this->User->getNumber();
+				$update = array('User' => array(
+					'id' => $id,
+					'key' => $key
+				));
+				$this->User->save($update);
+				$Email = new CakeEmail();
+				$Email->from('contacto@quikerwire.com');
+				$Email->emailFormat('html');
+				$Email->to($email);
+				$Email->subject(__('QuikerWire: Reseteo de password'));
+				$Email->template('reset_password');
+				$Email->viewVars(compact('id','key','name'));
+				$Email->send();
+				$this->Session->setFlash(__("you'll receive an email with instructions"), 'success'); 
+				$this->redirect(array('controller' => 'index', 'action'=>'index'));
+			} else {
+				$this->Session->setFlash(__("Invalid email"), 'success'); 
+			}
+		}
+	}
+	
+	function reset_password ($id,$key) {
+		if (!empty($this->data)) {
+			$data = $this->data;
+			$data['User']['key'] = '';
+			if ($this->User->save($data)) {
+						
+				$this->Session->setFlash(__("The password has been changed"), 'success'); 
+				$this->redirect(array('controller' => 'users', 'action'=>'login'));
+			}
+		}else {
+			$user = $this->User->find('first',array(
+				'conditions' => array(
+					'User.id' => $id,
+					'User.key' => $key
+				)
+			));
+			if (!empty($user)) {
+				$this->set(compact('id'));
+			} else {
+				$this->Session->setFlash(__("Invalid link"), 'success'); 
+				$this->redirect(array('controller' => 'index', 'action'=>'index'));
+			}
+		}
+		$this->set(compact('id'));
+	}
 }

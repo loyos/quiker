@@ -9,14 +9,14 @@
 		echo $this->Form->input('password',array(
 			'label' => false,
 		));
-		echo '</td></tr>';
+		echo '</td></tr><br>';
 		echo '<tr><td>';
 		echo 'Password Confirmation</td><td>';
 		echo $this->Form->input('password_confirmation',array(
 			'label' => false,
 			'type' => 'password'
 		));
-		echo '</td></tr>';
+		echo '</td></tr><br>';
 		echo $this->Form->input('id',array(
 			'type' => 'hidden',
 			'value' => $id

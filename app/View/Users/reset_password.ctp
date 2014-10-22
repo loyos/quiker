@@ -1,17 +1,21 @@
 <div class = "forgot_password">
+	
 	<div  style = "padding-top: 50px; padding-bottom: 50px; position: relative; margin-left: auto; margin-right: auto; width: 350px; text-align: center;">
 		<?php
 		echo $this->Form->create('User', array( "enctype" => "multipart/form-data"));
 		
 		echo '<table class="table_reset_password">';
 		echo '<tr><td>';
-		echo ' New Password</td><td>';
+		echo 'Reinicio de Contraseña.';
+		echo '</td></tr>';
+		echo '<tr><td>';
+		echo ' Nueva Contraseña: </td><td>';
 		echo $this->Form->input('password',array(
 			'label' => false,
 		));
 		echo '</td></tr><br>';
 		echo '<tr><td>';
-		echo 'Password Confirmation</td><td>';
+		echo 'Confirma tu contraseña: </td><td>';
 		echo $this->Form->input('password_confirmation',array(
 			'label' => false,
 			'type' => 'password'

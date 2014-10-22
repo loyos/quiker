@@ -11,6 +11,11 @@
 			echo $this->Form->input('username', array('label' => false));
 			echo "</td></tr>";
 			echo "<tr><td>";
+			echo "Nombre: ";
+			echo "</td><td>";
+			echo $this->Form->input('name', array('label' => false));
+			echo "</td></tr>";
+			echo "<tr><td>";
 			echo "Quiker number";
 			echo "</td><td>";
 			echo $this->Form->input('quiker', array('label' => false));

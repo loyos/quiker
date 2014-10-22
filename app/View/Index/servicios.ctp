@@ -30,5 +30,11 @@
 			<li>Transporte Masivo
 			Gerencia y distribución frecuente de encomiendas de alto volumen para ser entregadas en tiempos ajustados, en esta modalidad usted puede hacer consultas de su envío a través de nuestra pagina quikerwireenvios.com  por unidad de producto o por lote de envío. </li>
 		</p>
+		
+		<p>
+			<li> Notifícanos dónde está ubicada tu mercancía en el área de Miami, autorízanos y nosotros la retiramos para realizar el envío. La tarifa de este servicio varia
+(debes especificarnos los detalles y cotizaremos 
+el servicio). </li>
+		</p>
 	</ol>
 </div>

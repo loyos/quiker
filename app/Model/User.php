@@ -17,6 +17,10 @@ class User extends AppModel {
 		'quiker' => array(
             'type' => 'query',
             'method' => 'orConditions'
+        ),
+		'name' => array(
+            'type' => 'like',
+            'method' => 'name'
         )
     );
 	

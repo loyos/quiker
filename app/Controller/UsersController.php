@@ -13,7 +13,7 @@ class UsersController extends AppController {
 	
 	 public function beforeFilter() {
         parent::beforeFilter();
-        $this->Auth->allow('add','active_account','contacto','forgot_password');
+        $this->Auth->allow('add','active_account','contacto','forgot_password','reset_password');
     }
 
     public function index() {
@@ -266,7 +266,7 @@ class UsersController extends AppController {
 				$Email->emailFormat('html');
 				$Email->to($email);
 				$Email->subject(__('QuikerWire: Reseteo de password'));
-				$Email->template('reset_password');
+				$Email->template('reset_password', null);
 				$Email->viewVars(compact('id','key','name'));
 				$Email->send();
 				$this->Session->setFlash(__("you'll receive an email with instructions"), 'success'); 

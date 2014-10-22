@@ -1,14 +1,9 @@
 <?php 	
-	echo '<p>Estimated <b>'.$name.',</b></p>';
-	echo '<p>We have received a request to reset your current password. Please,<a style= "text-decoration: none;color:#00A8BF;cursor:pointer" href="'.FULL_BASE_URL.'/users/reset_password/'.$id.'/'.$key.'"> click here</a> to complete the process</p>';
-	echo '<p>Otherwise, please ignore this email and verify that your account information and security settings are correct.</p>';
+	echo '<p>Estimado(a) <b>'.$name.',</b></p>';
+	echo '<p>Hemos recibido una solicitud para resetear tu contraseña actual. Por favor,<a style= "text-decoration: none;color:#00A8BF;cursor:pointer" href="'.FULL_BASE_URL.'/users/reset_password/'.$id.'/'.$key.'"> Haz click aquí</a> para completar el proceso</p>';
+	echo '<p>Si no has solicitado un reinicio de contraseña, ignora este corero y ponte en contacto con quikerwire a través de los correos asociados.</p>';
 	echo '<br>';
-	echo '<p>Note: if you think this email should not have been sent to you, please contact our Customer Service as soon as possible informing this situation.</p>';
-	echo '<br>';
-	echo '<p>Best regards,<br>';
-	echo 'Customer Service Onleven<br>';
-	echo 'help@onleven.com<p>';
-	echo '<p>Onleven<br>';
-	echo 'Address Address Address<br>';
-	echo 'Doral, FL 33187, USA</p>';
+	echo '<p>QuikerWire<br>';
+	echo 'Dirección';
+	echo '3900 NW 79th St #594 .MIAMI FL 33166</p>';
 ?>

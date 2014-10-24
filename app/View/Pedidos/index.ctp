@@ -32,7 +32,7 @@
 					<td><b> <?php echo $p['Pedido']['peso']; ?> </b></td>
 				</tr>
 				<tr>
-					<td> Volumen: </td>
+					<td> Descripción: </td>
 					<td><b> <?php echo $p['Pedido']['volumen']; ?></b> </td>
 				</tr>
 				<tr>

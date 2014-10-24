@@ -9,6 +9,9 @@
     <li>
       <?php echo $this->Html->image('slide-3.jpg'); ?>
     </li>
+	<li>
+      <?php echo $this->Html->image('slide-4.jpg'); ?>
+    </li>
   </ul>
 </div>
 

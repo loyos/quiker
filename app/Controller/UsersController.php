@@ -110,6 +110,21 @@ class UsersController extends AppController {
 						->send();
 					
 					// email sent
+				
+				// notifying web admin
+				
+				$Email = new CakeEmail();
+				$Email->viewVars(array('username' => $this->request->data['User']['username']));
+					
+					// sending email
+					
+						$Email->template('new_user', null)
+						->emailFormat('html')
+						->to('loyenrique1@gmail.com')
+						->from('quikerwireenvios@gmail.com')
+						->send();
+					
+					// email sent
 					
 				
                 $this->Session->setFlash(__('Has sido registrado con exito, revisa tu email y sigue los pasos para validar tu cuenta'));

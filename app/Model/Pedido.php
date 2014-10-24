@@ -9,6 +9,13 @@ class Pedido extends AppModel {
         'Search.Searchable'
     );
 	
+	public $belongsTo = array(
+        'User' => array(
+            'className' => 'User',
+            'foreignKey' => 'numero_quiker'
+        )
+    );
+	
 	public $filterArgs = array(
         'status' => array(
             'type' => 'like',
@@ -17,6 +24,10 @@ class Pedido extends AppModel {
 		'quiker' => array(
             'type' => 'query',
             'method' => 'orConditions'
+        ),
+		'nombre' => array(
+            'type' => 'like',
+            'field' => 'User.name'
         )
     );
 	
@@ -25,9 +36,9 @@ class Pedido extends AppModel {
         $condition = array(
                 $this->alias . '.numero_quiker' => $filter ,
         );
+		debug($condition);
         return $condition;
-    }
-	
+    }	
 }
 
 ?>

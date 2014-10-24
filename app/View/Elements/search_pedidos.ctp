@@ -10,6 +10,14 @@
 			echo "<td>";
 			echo $this->Form->input('quiker', array('label' => false, 'empty' => 'Todos'));
 			echo "</td></tr>";
+			
+			echo "<tr><td>";
+			echo "Nombre de Usuario asociado: ";
+			echo "</td>";
+			echo "<td>";
+			echo $this->Form->input('nombre', array('label' => false, 'empty' => 'Todos'));
+			echo "</td></tr>";
+			
 			echo "<tr><td>";
 			echo "Estatus:";
 			echo "</td>";

@@ -38,7 +38,40 @@ class Pedido extends AppModel {
         );
 		debug($condition);
         return $condition;
-    }	
+    }
+
+	public $validate = array(
+        'status' => array(
+            'required' => array(
+                'rule' => array('notEmpty'),
+                'message' => 'rellena este campo'
+            ),
+        ),
+        'peso' => array(
+            'required' => array(
+                'rule' => array('notEmpty'),
+                'message' => 'rellena este campo'
+            )
+        ),
+		'descripcion' => array(
+            'required' => array(
+                'rule' => array('notEmpty'),
+                'message' => 'rellena este campo'
+            )
+        ),
+		'numero_quiker' => array(
+            'required' => array(
+                'rule' => array('notEmpty'),
+                'message' => 'rellena este campo'
+            )
+        ),
+		'precio' => array(
+            'required' => array(
+                'rule' => array('notEmpty'),
+                'message' => 'rellena este campo'
+            )
+        )
+    );	
 }
 
 ?>

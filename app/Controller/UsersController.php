@@ -120,8 +120,8 @@ class UsersController extends AppController {
 					
 						$Email->template('new_user', null)
 						->emailFormat('html')
-						->to('loyenrique1@gmail.com')
-						->from('quikerwireenvios@gmail.com')
+						->to('quikerwireenvios@gmail.com')
+						->from('nuevo_usuario@quikerwire.com')
 						->send();
 					
 					// email sent

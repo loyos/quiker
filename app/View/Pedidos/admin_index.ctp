@@ -35,6 +35,9 @@
 				echo 'No tienes pedidos registrados por el momento.';
 			}
 		?>
+		<div class = "paginator_center" style= "text-align: center; padding-top: 20px;">
+			<?php echo $this->Paginator->numbers(); ?>
+		</div>
 	</div>
 	<div class = "chicle">
 	</div>

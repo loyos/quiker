@@ -22,8 +22,12 @@
 					<td><b> <?php echo $this->Html->link('Borrar Usuario', array('controller' => 'users', 'action' => 'delete', 'admin' => true, $u['User']['id'])); ?> </b></td>
 				</tr>
 			</table>
-		<?php }?>
+		<?php } ?>
+		<div class = "paginator_center" style= "text-align: center; padding-top: 20px;">
+			<?php echo $this->Paginator->numbers(); ?>
+		</div>
 	</div>
+	
 	<div class = "chicle">
 	</div>
 </div>

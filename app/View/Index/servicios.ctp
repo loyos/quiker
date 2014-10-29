@@ -1,6 +1,6 @@
 <div class = 'servicios'>
 	<div class = "imagen">
-		<?php echo $this->Html->image('casillero.jpg', array('width' => '800px')); ?>
+		<?php echo $this->Html->image('servicios.jpg', array('width' => '800px')); ?>
 	</div>
 	<h1> Servicios </h1>
 	<ol>

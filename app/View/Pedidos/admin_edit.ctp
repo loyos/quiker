@@ -13,7 +13,7 @@
 			echo '<tr> <td> Fecha de entrega: '. $this->Form->input('fecha_entrega', array('label' => false)) .'</td></tr>';
 			echo  '<tr> <td> Fecha de recibo' .$this->Form->input('fecha_recibido', array('label' => false)) . ' </td></tr>';
 			echo  '<tr> <td> Peso:' .$this->Form->input('peso', array('label' => false)) . ' </td></tr>';
-			echo  '<tr> <td> Descripción: ' .$this->Form->input('volumen', array('label' => false)) . ' </td></tr>';
+			echo  '<tr> <td> Descripción: ' .$this->Form->input('volumen', array('label' => false, 'type' => 'textarea')) . ' </td></tr>';
 			echo  '<tr> <td> Numero de Quiker: ' .$this->Form->input('numero_quiker', array('label' => false)) . ' </td></tr>';
 			echo  '<tr> <td> Precio:' .$this->Form->input('precio', array('label' => false)) . ' </td></tr></table>';
 		?>
